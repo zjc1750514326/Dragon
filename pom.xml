@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <modules>
+
+        <!-- eureka注册中心服务端 -->
+        <module>eureka-server</module>
+
+        <!-- eureka注册中心客户端 -->
+        <module>eureka-client</module>
+
+        <!-- ribbon负载均衡 熔断机制hystrix以及监控面板-->
+        <module>eureka-ribbon-client</module>
+
+        <!-- feign负载均衡 熔断机制hystrix以及监控面板 -->
+        <module>eureka-feign-client</module>
+
+        <!-- 熔断机制hystrix， 使用Turbine聚合监控 -->
+        <module>eureka-monitor-client</module>
+
+        <!-- git仓库配置中心 -->
+        <module>git-config-server</module>
+
+        <!-- git配置客户端 -->
+        <module>git-config-client</module>
+    </modules>
+
+    <groupId>com.zjc</groupId>
+    <artifactId>springCloud203</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springCloud203</name>
+    <packaging>pom</packaging>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <!-- 保证在中文环境中源代码编辑和程序运行的日志输出中都不会出现乱码情况 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outEncoding>UTF-8</project.reporting.outEncoding>
+
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <!-- JDK 版本 -->
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 自动配置组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- SpringCloud依赖以及版本 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

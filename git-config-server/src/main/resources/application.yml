@@ -1,0 +1,23 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: git-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zjc1750514326/spring-cloud-config.git  # \u914D\u7F6Egit\u4ED3\u5E93\u7684\u5730\u5740
+          search-paths: spring-cloud-config  # git\u4ED3\u5E93\u5730\u5740\u4E0B\u7684\u76F8\u5BF9\u5730\u5740\uFF0C\u53EF\u4EE5\u914D\u7F6E\u591A\u4E2A\uFF0C\u7528,\u5206\u5272\u3002
+          basedir: config/basedir
+          default-label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# http://127.0.0.1:9001/config-client-dev.yml   \u76F4\u63A5\u8BBF\u95EEgit\u4E0A\u7684application-dev.properties\u6587\u4EF6
+# http://127.0.0.1:9001/config-client/dev  \u5F97\u5230\u914D\u7F6E\u6587\u4EF6\u7684\u4F4D\u7F6E\u3001\u7248\u672C\u3001\u914D\u7F6E\u6587\u4EF6\u7684\u540D\u79F0\u4EE5\u53CA\u914D\u7F6E\u6587\u4EF6\u4E2D\u7684JSON\u5177\u4F53\u5185\u5BB9
+# \u66F4\u591A\u8BFB\u53D6 readme.txt
+
+

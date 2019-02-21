@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: git-config-client
+
+server:
+  port: 9002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh  # \u5C06/actuator/refresh\u8FD9\u4E2A Endpoint \u66B4\u9732\u51FA\u6765
+
+
+
