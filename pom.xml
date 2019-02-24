@@ -31,6 +31,12 @@
 
         <!-- git配置客户端 -->
         <module>git-config-client</module>
+
+        <!-- 商品服务 -->
+        <module>product-server</module>
+
+        <!-- 订单服务 -->
+        <module>order-server</module>
     </modules>
 
     <groupId>com.zjc</groupId>
@@ -72,6 +78,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
         </dependency>
     </dependencies>
 
